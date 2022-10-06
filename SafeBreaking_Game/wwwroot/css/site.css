@@ -1,18 +1,64 @@
-html {
-  font-size: 14px;
+.logo {
+    border-radius: 25px;
+    border: 2px solid gray;    
+    box-shadow: 5px 7px 0 0 rgba(0,0,0, 0.9);
 }
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+.wrapper {
+    background: linear-gradient(135deg, rgb(114, 114, 114), rgb(43, 43, 43));
+    border-radius: 50px;
+    padding: 5rem;
 }
 
-html {
-  position: relative;
-  min-height: 100%;
+.safe {
+    box-shadow: inset 0 0 0 1px #c9c9c9, inset 0 1px 2px rgba(255, 255, 255, 0.5), inset 0 -1px 2px rgba(0, 0, 0, 0.5);   
+    background: conic-gradient(#d7d7d7, #c3c3c3, #cccccc, #c6c6c6, #d3d3d3, #d8d8d8, #d5d5d5, #d8d8d8, #d3d3d3, #c5c5c5, #c0c0c0, #bfbfbf, #d0d0d0, #d9d9d9, #d1d1d1, #c5c5c5, #c8c8c8, #d7d7d7, #d5d5d5, #cdcdcd, #c4c4c4, #d9d9d9, #cecece, #c5c5c5, #c5c5c5, #cdcdcd, #d8d8d8, #d9d9d9, #d7d7d7) padding-box, linear-gradient(#d4d4d4, #d4d4d4) padding-box, radial-gradient(rgba(120, 120, 120, 0.9), rgba(120, 120, 120, 0) 70%);
+    border-radius: 50px;
+    padding-bottom: 2.5rem;
 }
 
-body {
-  margin-bottom: 60px;
+
+label {
+    width: 90px;
+    height: 35px;
+    display: inline-block;
+    position: relative;
+    margin-left: 2rem;
+    margin-top: 3.7rem;
 }
+
+/*Hide default HTML checkbox */
+input[type="checkbox"] {
+    display: none;
+}
+
+    input[type="checkbox"] + span {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 90px;
+        height: 35px;
+        background: url(/img/doorhandle.png) no-repeat center;
+        background-size: 100% 100%;
+        cursor: pointer;
+    }
+
+    input[type="checkbox"]:checked + span {
+        transform: rotate(90deg);
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 90px;
+        height: 35px;
+        background: url(/img/doorhandle.png) no-repeat center;
+        background-size: 100% 100%;
+        cursor: pointer;
+    }
+
+    input[type="checkbox"]:checked + label {
+        transform: rotate(90deg);
+    }
+
+    input[type="checkbox"] :hover {
+        
+    }

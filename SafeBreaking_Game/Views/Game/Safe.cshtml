@@ -1,0 +1,33 @@
+﻿@model Game
+
+<div class="row">
+    <div class="col-3" style="margin-top:19rem;">
+        <img src="~/img/TheBrothersKolobki_1.png" width="300">
+    </div>
+    
+    <div class="col-7">
+        <div class="wrapper">
+            <div class="safe">
+                @for (int i = 0; i < Model.Handles.Length; i++)
+                {
+                    <div class="justify-content-center d-flex start-row">
+                        @for (int j = 0; j < Model.Handles[i].Length; j++)
+                        {
+                            <label>
+                                <a asp-controller="Game" asp-action="Safe" asp-route-row="@i" asp-route-column="@j">
+                                    <input type="checkbox" checked="@Model.Handles[i][j].IsVertical">
+                                    <span></span>
+                                </a>
+                            </label>
+                        }
+                        <br />
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class="col-2">
+        <img src="~/img/TheBrothersKolobki_2.png" width="300">
+    </div>
+</div>

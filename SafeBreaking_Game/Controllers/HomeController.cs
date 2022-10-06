@@ -1,6 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using SafeBreaking_Game.Models;
-using System.Diagnostics;
 
 namespace SafeBreaking_Game.Controllers
 {
@@ -21,12 +19,6 @@ namespace SafeBreaking_Game.Controllers
         public IActionResult Privacy()
         {
             return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+        }       
     }
 }
