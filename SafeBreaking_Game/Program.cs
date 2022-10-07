@@ -29,8 +29,9 @@ app.UseStatusCodePages();
 app.UseRouting();
 app.UseSession();
 
+app.MapDefaultControllerRoute();
 app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
-
+    name: "rules",
+    pattern: "{controller=Home}/{action=Rules}");
+  
 app.Run();

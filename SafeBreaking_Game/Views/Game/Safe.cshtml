@@ -1,11 +1,18 @@
 ﻿@model Game
 
+@if(Model.GameDifficulty == 6)
+{
+    <style>
+
+    </style>
+}
+
 <div class="row">
-    <div class="col-3" style="margin-top:19rem;">
-        <img src="~/img/TheBrothersKolobki_1.png" width="300">
+    <div class="col-2" style="margin-top:22rem;">
+        <img src="~/img/TheBrothersKolobki_1.png" width="240">
     </div>
     
-    <div class="col-7">
+    <div class="col-8">
         <div class="wrapper">
             <div class="safe">
                 @for (int i = 0; i < Model.Handles.Length; i++)
@@ -13,7 +20,7 @@
                     <div class="justify-content-center d-flex start-row">
                         @for (int j = 0; j < Model.Handles[i].Length; j++)
                         {
-                            <label>
+                            <label class="safe-label">
                                 <a asp-controller="Game" asp-action="Safe" asp-route-row="@i" asp-route-column="@j">
                                     <input type="checkbox" checked="@Model.Handles[i][j].IsVertical">
                                     <span></span>
@@ -28,6 +35,6 @@
     </div>
 
     <div class="col-2">
-        <img src="~/img/TheBrothersKolobki_2.png" width="300">
+        <img src="~/img/TheBrothersKolobki_2.png" width="240">
     </div>
 </div>
