@@ -5,44 +5,47 @@ namespace SafeBreaking_Game.Controllers
 {
     public class GameController : Controller
     {
-        private readonly ILogger<HomeController> logger;
-        private readonly Game game;
+        private readonly ILogger<HomeController> _logger;
+        private readonly Game _game;
 
         public GameController(ILogger<HomeController> logger, Game game)
         {
-            this.logger = logger;
-            this.game = game;
+            _logger = logger;
+            _game = game;
         }
 
         public IActionResult Safe(int row, int column)
         {
-            if(game.Handles == null)
-                game.SetStartGame();
+            if(_game.Handles is null)
+                _game.SetStartGame();
             else
             {
-                game.ChangePositions(new Handle { Row = row, Column = column });
+                _game.RevertHandles(new Handle { Row = row, Column = column });
 
-                if (game.GameCompletionCheck())
+                if (_game.CheckIsComplete())
                     return RedirectToAction("Success");
             }
-            return View(game);
+            return View(_game);
         }
 
         [HttpGet]
-        public IActionResult Settings() => View();
+        public IActionResult Settings() => View(_game);
 
         [HttpPost]
         public IActionResult Settings(Game gameSettings)
         {
             if(ModelState.IsValid)
             {
-                game.SaveSettings(gameSettings.Player, gameSettings.GameDifficulty);
+                _game.SaveSettings(gameSettings.Player, gameSettings.GameDifficulty);
                 return RedirectToAction("Safe");
             }
-            return View(game);
+            return View(_game);
         }
 
-        public IActionResult Success() => View();
-
+        public IActionResult Success()
+        {
+            _game.Handles = null;
+            return View(_game);
+        }            
     }
 }

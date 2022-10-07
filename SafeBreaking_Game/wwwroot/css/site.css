@@ -1,9 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+
+body {
+    font-family: 'Comfortaa', cursive;
+}
+
+/*-----Home-------*/
 .logo {
     border-radius: 25px;
     border: 2px solid gray;    
     box-shadow: 5px 7px 0 0 rgba(0,0,0, 0.9);
 }
 
+.name-link{
+    font-size: 12px;
+    text-decoration: none;
+    color: gray;
+}
+
+
+/*-------Safe--------*/
 .wrapper {
     background: linear-gradient(135deg, rgb(114, 114, 114), rgb(43, 43, 43));
     border-radius: 50px;
@@ -16,7 +31,6 @@
     border-radius: 50px;
     padding-bottom: 2.5rem;
 }
-
 
 .safe-label {
     width: 90px;
@@ -58,6 +72,8 @@ input[type="checkbox"] {
         pointer-events: all;
     }
 
+
+/*-------Settings------*/
 
 .settings-form {
     border: 1px solid #C8C8C8;

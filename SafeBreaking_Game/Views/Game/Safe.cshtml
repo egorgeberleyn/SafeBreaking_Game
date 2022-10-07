@@ -3,7 +3,22 @@
 @if(Model.GameDifficulty == 6)
 {
     <style>
+        .safe-label {
+            width: 50px;
+            height: 20px;
+            margin-left: 2rem;
+            margin-top: 2.5rem;
+        }
 
+        input[type="checkbox"] + span {            
+            width: 50px;
+            height: 20px;            
+        }
+
+        input[type="checkbox"]:checked + span {           
+            width: 50px;
+            height: 20px;           
+        }
     </style>
 }
 

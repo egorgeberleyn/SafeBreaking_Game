@@ -23,9 +23,9 @@ namespace SafeBreaking_Game.Models
             Session.SetJson("Game", this);
         }
 
-        public override void ChangePositions(Handle position)
+        public override void RevertHandles(Handle position)
         {
-            base.ChangePositions(position);
+            base.RevertHandles(position);
             Session.SetJson("Game", this);
         }
 

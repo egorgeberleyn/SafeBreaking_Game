@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@model Game
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -25,6 +27,20 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Rules">Правила игры</a>
+                        </li>                      
+                    </ul>
+                    <ul class="navbar-nav flex-grow-1 justify-content-end" style="margin-right:10rem;">
+                        <li class="nav-item">
+                            <img src="~/img/profile.png" width="22"/>
+                            @if(Model.Player == "")
+                            {
+                                <a class="name-link" asp-area="" asp-controller="Game" asp-action="Settings">Введите имя игрока</a>
+                            }
+                            else 
+                            {
+                                <span>Игрок: @Model.Player</span>
+                            }
+                            
                         </li>
                     </ul>
                 </div>
@@ -39,7 +55,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2022 - SafeBreaking_Game - Egor Geberleyn
+            &copy; 2022 - SafeBreaking Game - Egor Geberleyn
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
