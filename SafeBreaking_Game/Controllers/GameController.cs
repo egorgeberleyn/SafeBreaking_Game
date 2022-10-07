@@ -42,5 +42,7 @@ namespace SafeBreaking_Game.Controllers
             return View(game);
         }
 
+        public IActionResult Success() => View();
+
     }
 }
