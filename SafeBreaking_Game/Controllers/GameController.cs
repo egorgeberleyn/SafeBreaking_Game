@@ -5,15 +5,10 @@ namespace SafeBreaking_Game.Controllers
 {
     public class GameController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
         private readonly Game _game;
 
-        public GameController(ILogger<HomeController> logger, Game game)
-        {
-            _logger = logger;
-            _game = game;
-        }
-
+        public GameController(Game game) => _game = game;
+        
         public IActionResult Safe(int row, int column)
         {
             if(_game.Handles is null)
@@ -34,12 +29,9 @@ namespace SafeBreaking_Game.Controllers
         [HttpPost]
         public IActionResult Settings(Game gameSettings)
         {
-            if(ModelState.IsValid)
-            {
-                _game.SaveSettings(gameSettings.Player, gameSettings.GameDifficulty);
-                return RedirectToAction("Safe");
-            }
-            return View(_game);
+            if (!ModelState.IsValid) return View(_game);
+            _game.SaveSettings(gameSettings.Player, gameSettings.GameDifficulty);
+            return RedirectToAction("Safe");
         }
 
         public IActionResult Success()

@@ -10,7 +10,7 @@ namespace SafeBreaking_Game.Models
 
         public static Game GetGameSession(IServiceProvider service)
         {
-            ISession session = service.GetRequiredService<IHttpContextAccessor>()?.HttpContext.Session;
+            ISession session = service.GetRequiredService<IHttpContextAccessor>()?.HttpContext?.Session;
             GameSession game = session?.GetJson<GameSession>("Game")
             ?? new GameSession();
             game.Session = session;

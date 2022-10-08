@@ -1,9 +1,14 @@
-﻿namespace SafeBreaking_Game.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace SafeBreaking_Game.Models
 {
     public class Game
     {
-        public Handle[][] Handles { get; set; }        
-        public string Player { get; set; } = "";
+        public Handle[][] Handles { get; set; }
+
+        [StringLength(15)]
+        public string Player { get; set; } = string.Empty;
+
         public int GameDifficulty { get; set; } = 4;        
 
         public virtual void SetStartGame()
@@ -11,10 +16,10 @@
             var rnd = new Random();
 
             Handles = new Handle[GameDifficulty][];
-            for (int row = 0; row < Handles.Length; row++)
+            for (var row = 0; row < Handles.Length; row++)
             {
                 Handles[row] = new Handle[GameDifficulty];
-                for (int col = 0; col < Handles[row].Length; col++)
+                for (var col = 0; col < Handles[row].Length; col++)
                 {
                     Handles[row][col] = new Handle
                     {
