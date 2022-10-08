@@ -2,8 +2,7 @@
 {
     public class Game
     {
-        public Handle[][] Handles { get; set; }
-        public Handle PressedHandle { get; set; }
+        public Handle[][] Handles { get; set; }        
         public string Player { get; set; } = "";
         public int GameDifficulty { get; set; } = 4;        
 
@@ -27,7 +26,7 @@
             }                                    
         }
 
-        public virtual void RevertHandles(Handle position) =>
+        public virtual void TurnHandles(Handle position) =>
             Handles.SelectMany(arr => arr)
                    .Where(h => h.Column == position.Column || h.Row == position.Row)
                    .ToList()

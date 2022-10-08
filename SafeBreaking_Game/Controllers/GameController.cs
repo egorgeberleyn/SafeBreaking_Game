@@ -20,7 +20,7 @@ namespace SafeBreaking_Game.Controllers
                 _game.SetStartGame();
             else
             {
-                _game.RevertHandles(new Handle { Row = row, Column = column });
+                _game.TurnHandles(new Handle { Row = row, Column = column });
 
                 if (_game.CheckIsComplete())
                     return RedirectToAction("Success");
@@ -44,7 +44,7 @@ namespace SafeBreaking_Game.Controllers
 
         public IActionResult Success()
         {
-            _game.Handles = null;
+            _game.SetStartGame();
             return View(_game);
         }            
     }

@@ -30,8 +30,7 @@ app.UseRouting();
 app.UseSession();
 
 app.MapDefaultControllerRoute();
-app.MapControllerRoute(
-    name: "rules",
-    pattern: "{controller=Home}/{action=Rules}");
+app.MapControllerRoute( name: "rules", pattern: "{controller=Home}/{action=Rules}");
+app.MapControllerRoute( name: "settings", pattern: "{controller=Game}/{action=Settings}");
   
 app.Run();
