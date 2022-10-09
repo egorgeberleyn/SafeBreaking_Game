@@ -80,3 +80,81 @@ input[type="checkbox"] {
     border-radius: 10px;
     padding: 2rem 1rem;
 }
+
+
+/*Adaptive layout*/
+
+@media (max-width: 990px) {
+    .logo {
+        width: 300px;
+    }
+
+    .person {
+        display: none;
+    }
+
+    .safe-label {
+        width: 60px;
+        height: 25px;
+    }
+
+    input[type="checkbox"] + span {
+        width: 60px;
+        height: 25px;
+    }
+
+    input[type="checkbox"]:checked + span {
+        width: 60px;
+        height: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .safe-label {
+        width: 60px;
+        height: 25px;
+        
+    }
+    
+    input[type="checkbox"] + span {
+        
+        width: 60px;
+        height: 25px;
+    }
+
+    input[type="checkbox"]:checked + span {
+        width: 60px;
+        height: 25px;
+    }
+
+    .wrapper {
+      
+        padding: 2rem;
+    }
+
+    .safe {
+        padding-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .safe-label {
+        width: 45px;
+        height: 20px;
+    }
+
+    input[type="checkbox"] + span {
+        width: 45px;
+        height: 20px;
+    }
+
+    input[type="checkbox"]:checked + span {
+        width: 45px;
+        height: 20px;
+    }
+
+    .wrapper {
+        padding: 1rem;
+    }
+}
